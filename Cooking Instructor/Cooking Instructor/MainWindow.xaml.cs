@@ -20,9 +20,92 @@ namespace Cooking_Instructor
     /// </summary>
     public partial class MainWindow : Window
     {
+        // List(Array) of all the screens
+        Grid[] listOfScreens;
+        // Previous screen to go back onclick "Back"
+        Grid previousScreen;
+        Grid previousFooter;
+
         public MainWindow()
         {
             InitializeComponent();
+            listOfScreens = new Grid[] {
+                HomePage, RecipesPage, GlossaryPage, SettingsPage,
+                MainFooterGrid };
+
+            // Bring up the homepage
+            BringFront(HomePage, MainFooterGrid);
+            
+        }
+
+
+
+
+        /// <summary>
+        ///     This function hides all the screens except the 
+        ///     one that is sent in as a parameter, and brings 
+        ///     that to the front. Also has an option to bring 
+        ///     a footer to front as well.
+        /// </summary>
+        /// <param name="screen"> Screen to bring front </param>
+        /// <param name="footer"> Footer to bring front </param>
+        public void BringFront(Grid screen, Grid footer)
+        {
+            foreach (Grid g in listOfScreens)
+            {
+                if (g != screen) // || g != footer)
+                {
+                    g.Visibility = Visibility.Collapsed;
+                }
+
+            }
+
+            // Set the screen
+            screen.Visibility = Visibility.Visible;
+
+            // Set the footer
+            if (footer != null)
+            {
+                footer.Visibility = Visibility.Visible;
+            }
+
+        }
+
+        // Hide the current window 
+        public void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            //App.Current.MainWindow.Visibility = Visibility.Collapsed;
+            //previousScreen.Visibility = Visibility.Visible;
+            BringFront(previousScreen, previousFooter);
+        }
+
+        /*
+        public void BringFront(Grid screen, Grid footer)
+        {
+            foreach(Grid g in listOfScreens)
+            {
+                //Console.WriteLine("g: " + g + " -> "+ (g != gd));
+                if (g != screen)
+                {
+                    Canvas.SetZIndex(g, 0);
+                } 
+
+            }
+            Canvas.SetZIndex(screen, 1);
+            if(footer != null)
+            {
+                Canvas.SetZIndex(footer, 1);
+            }
+        }
+        */
+
+        // allows the screen to be moved around
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+
+            // Begin dragging the window
+            this.DragMove();
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
@@ -39,5 +122,62 @@ namespace Cooking_Instructor
                 Close();
             }
         }
+
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            BringFront(HomePage, MainFooterGrid);
+            //HomePage.Visibility = Visibility.Visible;
+            //RecipesPage.Visibility = Visibility.Collapsed;
+            //GlossaryPage.Visibility = Visibility.Collapsed;
+        }
+
+        private void RecipesButton_Click(object sender, RoutedEventArgs e)
+        {
+            BringFront(RecipesPage, MainFooterGrid);
+            //HomePage.Visibility = Visibility.Collapsed;
+            //RecipesPage.Visibility = Visibility.Visible;
+            //GlossaryPage.Visibility = Visibility.Collapsed;
+        }
+
+        private void GlossaryButton_Click(object sender, RoutedEventArgs e)
+        {
+            BringFront(GlossaryPage, MainFooterGrid);
+            //HomePage.Visibility = Visibility.Collapsed;
+            //RecipesPage.Visibility = Visibility.Collapsed;
+            //GlossaryPage.Visibility = Visibility.Visible;
+        }
+
+        private void GeneralSettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            GeneralSettingsButton.Visibility = Visibility.Collapsed;
+            BringFront(SettingsPage, null);
+        }
+
+        // Settings_Home
+        private void SettingsButton_Home_Click(object sender, RoutedEventArgs e)
+        {
+            previousScreen = HomePage;
+            previousFooter = MainFooterGrid;
+            BringFront(SettingsPage, null);
+        }
+
+        // Settings_Recipes
+        private void SettingsButton_Recipes_Click(object sender, RoutedEventArgs e)
+        {
+            previousScreen = RecipesPage;
+            previousFooter = MainFooterGrid;
+            BringFront(SettingsPage, null);
+        }
+
+        // Settings_Glossary
+        private void SettingsButton_Glossary_Click(object sender, RoutedEventArgs e)
+        {
+            previousScreen = GlossaryPage;
+            previousFooter = MainFooterGrid;
+            BringFront(SettingsPage, null);
+        }
+
+
+
     }
 }
