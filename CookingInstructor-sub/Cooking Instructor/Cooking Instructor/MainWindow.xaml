@@ -1,0 +1,148 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cooking_Instructor"
+        xmlns:ToggleSwitch="clr-namespace:ToggleSwitch;assembly=ToggleSwitch" x:Class="Cooking_Instructor.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="427" Width="240" ResizeMode="NoResize" WindowStyle="None" KeyDown="Window_KeyDown_1" Background="Black">
+    <Grid x:Name="Container" Background="#FFF9F5D1" Width="240" Height="427">
+        <Grid x:Name="MainPages">
+            <Grid x:Name="HomePage" Background="#FFF9F5D1" Width="240" Height="427" d:IsHidden="True">
+                <Grid x:Name="HeaderGrid_Home" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="240" Background="#FF5EB299">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="PageTitle_Home" HorizontalAlignment="Left" TextWrapping="Wrap" Width="151.167" Margin="43.216,4.533,0,5.467" FontSize="22" TextAlignment="Center" Foreground="#FFF9F8F1" Grid.Column="1"><Run Text="Home"/><LineBreak/><Run/></TextBlock>
+                    <local:SettingsButtonControl x:Name="HomeSettingsButton" Height="30" Width="30" Grid.Column="1" Margin="200,5,10,5" MouseEnter="SettingsButtonControl_MouseEnter" MouseLeave="SettingsButtonControl_MouseLeave" MouseDown="SettingsButtonControl_MouseDown" Foreground="{x:Null}"/>
+                </Grid>
+                <Grid x:Name="Content_Home" HorizontalAlignment="Left" Height="346.171" Margin="0,40,0,0" VerticalAlignment="Top" Width="240">
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="33.824" Width="220" Margin="10,10,0,0" FontSize="24" TextAlignment="Center" Text="Cooking Instructor" Foreground="#FF5EB299" FontWeight="Bold"/>
+                    <Image Margin="10,48.824,10,23.415" Source="Mainpage.jpg" Stretch="Fill"/>
+                </Grid>
+
+            </Grid>
+            <Grid x:Name="RecipesPage" Background="#FFF9F5D1" Width="240" Height="427">
+                <Grid x:Name="HeaderGrid_Recipes" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="240" Background="#FF5EB299">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="47*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="PageTitle_Recipes" HorizontalAlignment="Left" TextWrapping="Wrap" Width="151.167" Margin="39.216,4.533,0,5.467" FontSize="22" TextAlignment="Center" Foreground="#FFF9F8F1" Grid.Column="1" Text="Recipes"/>
+                    <local:SettingsButtonControl x:Name="RecipeSettingsButton" Height="30" Width="30" Grid.Column="1" Margin="195,5,10,5" MouseEnter="SettingsButtonControl_MouseEnter" MouseLeave="SettingsButtonControl_MouseLeave" MouseDown="SettingsButton_Recipes_Click" Foreground="{x:Null}"/>
+                </Grid>
+                <Grid x:Name="Content_Recipes" HorizontalAlignment="Left" Height="346.673" VerticalAlignment="Top" Width="240" Margin="0,40,0,0">
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,10,0,0" Foreground="#FF5EB299"><Run FontSize="14" Text="Search"/><Run Text=":"/></TextBlock>
+                    <Rectangle Fill="#FFF9F8EC" HorizontalAlignment="Left" Height="23.048" Margin="63.795,10,0,0" VerticalAlignment="Top" Width="166.205" Stroke="#FF5EB299"/>
+                </Grid>
+                <ScrollViewer HorizontalAlignment="Left" Height="298.211" Margin="10,88.462,0,0" VerticalAlignment="Top" Width="220">
+                    <UniformGrid Height="298.211">
+                        <Image Height="61.158" Source="Pasta.jpg" Stretch="Fill" Width="63.34"/>
+                        <Image Height="63.066" Source="Cake.jpg" Stretch="Fill" Width="75.96"/>
+                        <Image Height="55.898" Source="Chicken.jpg" Stretch="Fill" Width="66.044" RenderTransformOrigin="0.5,0.5" Margin="0,46.603,0,46.604">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                        <Image Source="omelette.jpg" Stretch="Fill" Width="67.895" Margin="0,48.483,0,45.932"/>
+                    </UniformGrid>
+                </ScrollViewer>
+
+            </Grid>
+            <Grid x:Name="GlossaryPage" Background="#FFF9F5D1" Width="240" Height="427" d:IsHidden="True">
+                <Grid x:Name="HeaderGrid_Glossary" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="240" Background="#FF5EB299">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="47*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="PageTitle_Glossary" HorizontalAlignment="Left" TextWrapping="Wrap" Width="151.167" Margin="39.216,4.533,0,5.467" FontSize="22" TextAlignment="Center" Foreground="#FFF9F8F1" Grid.Column="1"><Run Text="Glossary"/><LineBreak/><Run/></TextBlock>
+                    <local:SettingsButtonControl x:Name="GlossarySettingsButton" Height="30" Width="30" Grid.Column="1" Margin="195,5,10,5" MouseEnter="SettingsButtonControl_MouseEnter" MouseLeave="SettingsButtonControl_MouseLeave" MouseDown="SettingsButton_Glossary_Click" Foreground="{x:Null}"/>
+                </Grid>
+
+            </Grid>
+            <Grid x:Name="MainFooterGrid" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="240" Margin="0,387,0,0" Background="#FF5EB299">
+                <Button x:Name="RecipesButton" Margin="84.75,2.25,84.25,2.75" Background="{x:Null}" Click="RecipesButton_Click" Foreground="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0">
+                    <local:RecipesButtonControl Height="35" Width="71"/>
+                </Button>
+                <Button x:Name="GlossaryButton" Margin="0,2.25,5.25,2.75" Background="{x:Null}" HorizontalAlignment="Right" Width="71" Click="GlossaryButton_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
+                    <local:GlossaryButtonControl Height="35" Width="73.75" d:LayoutOverrides="HorizontalAlignment"/>
+                </Button>
+                <Button x:Name="HomeButton" HorizontalAlignment="Left" Width="71" Margin="4.75,2.25,0,2.75" Background="{x:Null}" Click="HomeButton_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
+                    <local:HomeButtonControl Height="35" Width="71" d:LayoutOverrides="HorizontalAlignment"/>
+                </Button>
+            </Grid>
+        </Grid>
+        <Grid x:Name="OtherPages" d:IsHidden="True">
+            <Grid x:Name="SettingsPage" Background="#FFF9F5D1" Width="240" Height="427">
+                <Grid x:Name="HeaderGrid_Settings" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="240" Background="#FF5EB299">
+
+                    <TextBlock x:Name="PageTitle_Settings" HorizontalAlignment="Left" TextWrapping="Wrap" Width="151.167" Margin="43.966,4.533,0,5.467" FontSize="22" TextAlignment="Center" Foreground="#FFF9F8F1" Text="Settings"/>
+                    <local:BackButtonControl HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="10,5,0,0" MouseEnter="SettingsButtonControl_MouseEnter" MouseLeave="SettingsButtonControl_MouseLeave" MouseDown="BackButtonControl_MouseDown"/>
+                </Grid>
+                <Grid x:Name="Switches" Margin="10,62.333,19.667,143.5">
+                    <Grid x:Name="Switch_1" Height="31.5" VerticalAlignment="Top">
+
+
+                        <Label x:Name="label" Content="Label" Margin="0,0,101,0"/>
+                    </Grid>
+                    <Grid x:Name="Switch_2" Height="31.5" Margin="0,59.333,0,0" VerticalAlignment="Top">
+
+                        <Label x:Name="label_Copy" Content="Label" Margin="0,0,101,0"/>
+                    </Grid>
+                    <Grid x:Name="Switch_3" Margin="0,0,0,67" Height="31.5" VerticalAlignment="Bottom">
+
+                        <Label x:Name="label_Copy1" Content="Label" Margin="0,0,101,0"/>
+                    </Grid>
+                    <Grid x:Name="Switch_4" Height="31.5" VerticalAlignment="Bottom">
+
+                        <Label x:Name="label_Copy2" Content="Label" Margin="0,0,101,0"/>
+
+                    </Grid>
+
+                </Grid>
+
+
+
+            </Grid>
+
+        </Grid>
+        <Grid x:Name="JustInCaseCopy" Background="#FFF9F5D1" Width="240" Height="427" Visibility="Hidden" d:IsHidden="True">
+            <Grid x:Name="HeaderGrid_Home2" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="240" Background="#FF5EB299">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="47*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="PageTitle_Home2" HorizontalAlignment="Left" TextWrapping="Wrap" Width="151.167" Margin="39.216,4.533,0,5.467" FontSize="22" TextAlignment="Center" Foreground="#FFF9F8F1" Grid.Column="1"><Run Text="Home"/><LineBreak/><Run/></TextBlock>
+                <Button x:Name="SettingsButton1" Background="{x:Null}" Margin="0,4.5,9.5,5.5" Grid.Column="1" Foreground="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" BorderThickness="0">
+                    <local:SettingsButtonControl d:LayoutOverrides="HorizontalAlignment" Height="30" Width="30"/>
+                </Button>
+                <Button x:Name="BackButton1" Margin="4.5,4.5,0,0" BorderThickness="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="51.705" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
+                    <local:BackButtonControl Width="51.705" Height="29.967"/>
+                </Button>
+            </Grid>
+            <Grid x:Name="FooterGrid_Home2" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="240" Margin="0,387,0,0" Background="#FF5EB299">
+                <Button x:Name="HomeButton_Home2" HorizontalAlignment="Left" Width="71" Margin="4.75,2.25,0,2.75" Background="{x:Null}" Click="HomeButton_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
+                    <local:HomeButtonControl Height="35" Width="71" d:LayoutOverrides="HorizontalAlignment"/>
+                </Button>
+                <Button x:Name="RecipesButton_Home2" Margin="84.75,2.25,84.25,2.75" Background="{x:Null}" Click="RecipesButton_Click" Foreground="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0">
+                    <local:RecipesButtonControl Height="35" Width="71"/>
+                </Button>
+                <Button x:Name="GlossaryButton_Home2" Margin="0,2.25,5.25,2.75" Background="{x:Null}" HorizontalAlignment="Right" Width="71" Click="GlossaryButton_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
+                    <local:GlossaryButtonControl Height="35" Width="73.75" d:LayoutOverrides="HorizontalAlignment"/>
+                </Button>
+            </Grid>
+
+        </Grid>
+        <Button x:Name="GeneralSettingsButton" Background="{x:Null}" Margin="0,4.5,9.5,0" Foreground="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" BorderThickness="0" Click="GeneralSettingsButton_Click" Height="30" VerticalAlignment="Top" Visibility="Hidden" d:IsHidden="True">
+            <local:SettingsButtonControl d:LayoutOverrides="HorizontalAlignment" Height="30" Width="30"/>
+        </Button>
+
+    </Grid>
+</Window>
