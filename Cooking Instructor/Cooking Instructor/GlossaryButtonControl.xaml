@@ -8,9 +8,7 @@
              d:DesignHeight="35" d:DesignWidth="73.75">
     <Grid>
         <Rectangle Fill="#FF9FE5C2" HorizontalAlignment="Left" Height="35" Margin="0,0,-71,-35" VerticalAlignment="Top" Width="71"/>
-        <TextBlock HorizontalAlignment="Left" Height="27.25" Margin="3,4.155,-73.75,-31.405" TextWrapping="Wrap" Text="Glossary" VerticalAlignment="Top" Width="70.75" Foreground="#FF5B8F7E" FontSize="18"/>
-        <Rectangle Fill="#FF9FE5C2" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="71"/>
-        <TextBlock HorizontalAlignment="Left" Height="27.25" Margin="3,4.155,0,0" TextWrapping="Wrap" Text="Glossary" VerticalAlignment="Top" Width="70.75" Foreground="#FF5B8F7E" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="27.25" Margin="0.25,3.155,0,0" TextWrapping="Wrap" Text="Glossary" VerticalAlignment="Top" Width="70.75" Foreground="#FF5B8F7E" FontSize="18" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
 
     </Grid>
 </UserControl>
