@@ -1,0 +1,25 @@
+﻿<UserControl x:Name="StepsScreen" x:Class="Cooking_Instructor.RecipeSteps"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Cooking_Instructor"
+             mc:Ignorable="d" 
+             d:DesignHeight="322.333" d:DesignWidth="220.5">
+    <Grid x:Name="StepsScreenGrid">
+        <Rectangle Fill="#FF9FE5C2" StrokeStartLineCap="Round" Stroke="#FFD13636" Margin="0"/>
+        <Label x:Name="label" Content="STEPS" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Background="{x:Null}" HorizontalAlignment="Center" Margin="71.006,10,71.007,0"/>
+        <Button x:Name="button" Background="{x:Null}" FontWeight="Bold" BorderBrush="{x:Null}" Click="button_Click" HorizontalAlignment="Right" Margin="11.037,5,10,0" VerticalAlignment="Top">
+            <Ellipse Fill="#FF64EAA7" Height="24" StrokeStartLineCap="Round" Stroke="#FFD13636" Width="24"/>
+        </Button>
+        <Border Margin="13.035,51.923,10,10" BorderBrush="#FF5EE46B" BorderThickness="2" Background="#FFEAF388" >
+            <ScrollViewer BorderBrush="Black">
+                <TextBlock x:Name="textBlock" TextWrapping="Wrap"><Run FontWeight="Bold" Text="Step 1:"/><LineBreak/><Run Text="Some short instruction"/><LineBreak/><Run/><LineBreak/><Run FontWeight="Bold" Text="Step 2:"/><LineBreak/><Run Text="Praesent blandit, nunc eu viverra egestas, elit eros bibendum leo, non pretium erat risus id justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam placerat lorem ipsum, in euismod tortor suscipit commodo. Quisque eget lacus vehicula, aliquet ligula vitae, euismod lectus."/><LineBreak/><Run/><LineBreak/><Run FontWeight="Bold" Text="Step 3: "/><LineBreak/><Run Text="Integer vel mi volutpat, euismod neque ac, convallis nisi. Aenean porta nulla interdum pulvinar consequat. Suspendisse nec fermentum ligula. Maecenas feugiat dolor turpis. Ut cursus ac ex nec ultricies. Sed molestie vehicula ante ut fermentum."/><LineBreak/><Run Text="         "/></TextBlock>
+            </ScrollViewer>
+
+        </Border>
+        <Path Data="M164.667,20.68 L175.3465,10.0005" Fill="#FF9FE5C2" HorizontalAlignment="Right" Height="11.68" Margin="0,12.833,18.154,0" StrokeStartLineCap="Round" Stretch="Fill" Stroke="#FFD13636" VerticalAlignment="Top" Width="11.679"/>
+        <Path Data="M164.667,10 L175.69409,21.027087" Fill="#FF9FE5C2" HorizontalAlignment="Right" Height="12.027" Margin="0,12.833,17.806,0" StrokeStartLineCap="Round" Stretch="Fill" Stroke="#FFD13636" VerticalAlignment="Top" Width="12.027"/>
+
+    </Grid>
+</UserControl>
