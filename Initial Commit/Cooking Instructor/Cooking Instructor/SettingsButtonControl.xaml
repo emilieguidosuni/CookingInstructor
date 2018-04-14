@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Cooking_Instructor.SettingsButtonControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Cooking_Instructor"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="30">
+    <Grid>
+        <Rectangle x:Name="ButtonBackground" Fill="#FF9FE5C2" HorizontalAlignment="Left" Height="30" Margin="0,0,-30,-30" VerticalAlignment="Top" Width="30"/>
+        <Rectangle Fill="#FF5B8F7E" HorizontalAlignment="Left" Height="22.75" Margin="12.656,3.844,0,0" Stroke="#FF5B8F7E" VerticalAlignment="Top" Width="4.75" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="43.38"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="#FF5B8F7E" HorizontalAlignment="Left" Height="22.75" Margin="12.406,3.594,0,0" Stroke="#FF5B8F7E" VerticalAlignment="Top" Width="4.75" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.73"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="#FF5B8F7E" HorizontalAlignment="Left" Height="22.75" Margin="12.656,3.844,0,0" Stroke="#FF5B8F7E" VerticalAlignment="Top" Width="4.75" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="139.172"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="#FF5B8F7E" HorizontalAlignment="Left" Height="22.75" Margin="12.656,3.594,0,0" Stroke="#FF5B8F7E" VerticalAlignment="Top" Width="4.75"/>
+        <Ellipse Fill="#FF5B8F7E" HorizontalAlignment="Left" Height="18" Margin="5.656,6.094,0,0" VerticalAlignment="Top" Width="18" TextBlock.Foreground="#FFF9F8F1" TextBlock.FontSize="22" TextBlock.TextAlignment="Center"/>
+        <Ellipse Fill="#FF9FE5C2" HorizontalAlignment="Left" Height="9" Margin="10.29,10.536,0,0" VerticalAlignment="Top" Width="9" RenderTransformOrigin="0.656,0.844"/>
+
+    </Grid>
+</UserControl>
